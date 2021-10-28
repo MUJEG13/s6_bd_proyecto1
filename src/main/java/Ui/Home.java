@@ -593,7 +593,7 @@ public class Home extends javax.swing.JFrame {
                         + "pw varchar(100) NOT NULL,"
                         + "rol int NOT NULL,"
                         + "PRIMARY KEY (id_usuario),"
-                        + "CONSTRAINT usuarios_ibfk_1 FOREIGN KEY (rol) REFERENCES umg_rols (id_rol)"
+                        + "CONSTRAINT umg_usuarios_ibfk_1 FOREIGN KEY (rol) REFERENCES umg_rols (id_rol)"
                     + ")";
 
             stCreate = conn.createStatement();
@@ -642,8 +642,8 @@ public class Home extends javax.swing.JFrame {
                         + "unidad_medida int NOT NULL,"
                         + "precio_unitario float NOT NULL,"
                         + "PRIMARY KEY (id_producto),"
-                        + "CONSTRAINT productos_ibfk_1 FOREIGN KEY (unidad_medida) REFERENCES umg_unidades_medida (umedida_id),"
-                        + "CONSTRAINT productos_ibfk_2 FOREIGN KEY (proveedor) REFERENCES umg_proveedores (id_proveedor)"
+                        + "CONSTRAINT umg_productos_ibfk_1 FOREIGN KEY (unidad_medida) REFERENCES umg_unidades_medida (umedida_id),"
+                        + "CONSTRAINT umg_productos_ibfk_2 FOREIGN KEY (proveedor) REFERENCES umg_proveedores (id_proveedor)"
                     + ")";
 
             stCreate = conn.createStatement();
@@ -676,8 +676,8 @@ public class Home extends javax.swing.JFrame {
                         + "adquirido date NOT NULL,"
                         + "responsable int NOT NULL,"
                         + "primary KEY (id_producto, responsable),"
-                        + "CONSTRAINT existencias_ibfk_1 FOREIGN KEY (id_producto) REFERENCES umg_productos (id_producto),"
-                        + "CONSTRAINT existencias_ibfk_2 FOREIGN KEY (responsable) REFERENCES umg_usuarios (id_usuario)"
+                        + "CONSTRAINT umg_existencias_ibfk_1 FOREIGN KEY (id_producto) REFERENCES umg_productos (id_producto),"
+                        + "CONSTRAINT umg_existencias_ibfk_2 FOREIGN KEY (responsable) REFERENCES umg_usuarios (id_usuario)"
                     + ")";
 
             stCreate = conn.createStatement();
@@ -710,8 +710,8 @@ public class Home extends javax.swing.JFrame {
                         + "id_categoria int NOT NULL,"
                         + "id_producto int NOT NULL,"
                         + "PRIMARY KEY  (id_categoria,id_producto),"
-                        + "CONSTRAINT listado_categorias_ibfk_1 FOREIGN KEY (id_categoria) REFERENCES umg_categorias (id_categoria),"
-                        + "CONSTRAINT listado_categorias_ibfk_2 FOREIGN KEY (id_producto) REFERENCES umg_productos (id_producto)"
+                        + "CONSTRAINT umg_listado_categorias_ibfk_1 FOREIGN KEY (id_categoria) REFERENCES umg_categorias (id_categoria),"
+                        + "CONSTRAINT umg_listado_categorias_ibfk_2 FOREIGN KEY (id_producto) REFERENCES umg_productos (id_producto)"
                     + ")";
 
             stCreate = conn.createStatement();
@@ -730,8 +730,8 @@ public class Home extends javax.swing.JFrame {
                         + "total float NOT NULL,"
                         + "responsable int NOT NULL,"
                         + "PRIMARY KEY (id_factura),"
-                        + "CONSTRAINT facturas_ibfk_2 FOREIGN KEY (id_cliente) REFERENCES umg_clientes (id_cliente),"
-                        + "CONSTRAINT facturas_ibfk_3 FOREIGN KEY (responsable) REFERENCES umg_usuarios (id_usuario)"
+                        + "CONSTRAINT umg_facturas_ibfk_2 FOREIGN KEY (id_cliente) REFERENCES umg_clientes (id_cliente),"
+                        + "CONSTRAINT umg_facturas_ibfk_3 FOREIGN KEY (responsable) REFERENCES umg_usuarios (id_usuario)"
                     + ")";
 
             stCreate = conn.createStatement();
@@ -749,7 +749,7 @@ public class Home extends javax.swing.JFrame {
                         + "precio_unitario float NOT NULL,"
                         + "subtotal float NOT NULL,"
                         + "PRIMARY KEY (id_detalle),"
-                        + "CONSTRAINT detalles_factura_ibfk_1 FOREIGN KEY (id_factura) REFERENCES umg_facturas (id_factura)"
+                        + "CONSTRAINT umg_detalles_factura_ibfk_1 FOREIGN KEY (id_factura) REFERENCES umg_facturas (id_factura)"
                     + ")";
 
             stCreate = conn.createStatement();
