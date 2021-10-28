@@ -768,7 +768,7 @@ public class Home extends javax.swing.JFrame {
 
     private void setRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setRegistrosActionPerformed
         // Nota: Insertar registros
-                Connection conn = null;
+        Connection conn = null;
         
         try {
             String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -780,15 +780,19 @@ public class Home extends javax.swing.JFrame {
             System.out.println("CONEXION EXITOSA");
 
             // Instancamos donde están los querys
-            StringInsert querysInsert = new StringInsert();
+            InsertVarios querysInsert = new InsertVarios();
            
             // -- 1
             String[] querys = querysInsert.getInsert_rols();
+            System.out.println("patito");
             
             for (int i = 0; i < querys.length; i++) {
-                PreparedStatement insert = conn.prepareStatement(querys[i]);
-                insert.executeUpdate();
-                insert.close();
+                System.out.println(querys[i]);
+                Statement stCreate = conn.createStatement();
+                ResultSet rsCreate = stCreate.executeQuery(querys[i]);
+            
+                stCreate.close();
+                rsCreate.close();
             }
             
             conn.close();
