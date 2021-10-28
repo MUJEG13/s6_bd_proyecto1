@@ -786,13 +786,9 @@ public class Home extends javax.swing.JFrame {
             String[] querys = querysInsert.getInsert_rols();
             
             for (int i = 0; i < querys.length; i++) {
-                String query = querys[i];
-                
-                Statement stCreate = conn.createStatement();
-                ResultSet rsCreate = stCreate.executeQuery(query);
-                
-                stCreate.close();
-                rsCreate.close();
+                PreparedStatement insert = conn.prepareStatement(querys[i]);
+                insert.executeUpdate();
+                insert.close();
             }
             
             conn.close();
