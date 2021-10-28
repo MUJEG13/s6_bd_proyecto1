@@ -318,6 +318,9 @@
               <AccessibilityProperties>
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="setRegistros"/>
               </AccessibilityProperties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="setRegistrosActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="setVistas">
               <Properties>
