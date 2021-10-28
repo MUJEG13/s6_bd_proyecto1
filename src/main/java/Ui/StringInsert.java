@@ -429,7 +429,7 @@ public class StringInsert {
             "INSERT INTO existencias (id_producto, cantidad, adquirido, responsable) VALUES (48, 404, TO_DATE('2021-09-17 13:00:10', 'yyyy-mm-dd hh24:mi:ss'),98)",
             "INSERT INTO existencias (id_producto, cantidad, adquirido, responsable) VALUES (49, 449, TO_DATE('2021-09-17 13:00:10', 'yyyy-mm-dd hh24:mi:ss'),59)",
             "INSERT INTO existencias (id_producto, cantidad, adquirido, responsable) VALUES (50, 423, TO_DATE('2021-09-17 13:00:10', 'yyyy-mm-dd hh24:mi:ss'),83)"
-        }
+        };
     }
 
     public String[] getInsert_clientes() {
